@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego</title>
+  </head>
+  <body>
+    <div class="div">
+      <div>
+        <div class="lego1 lego"></div>
+        <div class="lego2 lego"></div>
+        <div class="lego3 lego"></div>
+        <div class="lego4 lego"></div>
+      </div>
+      <div class="img1 img">
+        <div class="text5 textDiv">
+          <p class="img4Text1">Até Projetos Complexos</p>
+        </div>
+      </div>
+      <div class="img2 img">
+        <div class="text4 textDiv">
+          <p class="img3Text1">De Projetos Simples</p>
+        </div>
+      </div>
+      <div class="img3 img">
+        <div class="text3 textDiv">
+          <p class="img2Text1">Mesmo quadros famosos</p>
+        </div>
+      </div>
+      <div class="img4 img">
+        <div class="text1 textDiv">
+          <p class="img1Text1">Use sua imaginação</p>
+        </div>
+        <div class="text2 textDiv">
+          <p class="img1Text2">Crie qualquer coisa</p>
+        </div>
+      </div>
+      <div class="white cores"></div>
+      <div class="yellow cores"></div>
+      <div class="red cores"></div>
+      <div class="logo"></div>
+      <div class="circle"></div>
+      <div class="name"></div>
+    </div>
+  </body>
+  <style>
+    .circle {
+      background: #ff0000;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: absolute;
+      left: 90px;
+      top: 115px;
+      /* transform: translate(-50%, -50%); */
+      animation: 0.5s 30s backwards circleAppear, 10s 31s infinite scaleCircle;
+      /* animation: 0.5s 3.5s backwards circleAppear, 10s 4s infinite scaleCircle; */
+    }
+    .name {
+      opacity: 0;
+      width: 100px;
+      height: 60px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("./legoLogo.png");
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: 1.5s 31s forwards finalTextAppear;
+    }
+    .lego {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      background-size: cover;
+      animation: 1.5s 29.5s forwards legoAppear;
+    }
+    .lego1 {
+      background-image: url("./legoAzul.png");
+      left: 25%;
+      top: 10%;
+      animation: 10s 30.9s infinite legoPulsing, 1.5s 29.5s backwards legoAppear;
+    }
+    .lego2 {
+      background-image: url("./legoVerde.png");
+      left: 80%;
+      top: 40%;
+      animation: 12s 30.9s infinite legoPulsing, 1.5s 29.5s backwards legoAppear;
+    }
+    .lego3 {
+      background-image: url("./legoVermelho.png");
+      left: 65%;
+      top: 66%;
+      animation: 13.5s 30.9s infinite legoPulsing,
+        1.5s 29.5s backwards legoAppear;
+    }
+    .lego4 {
+      background-image: url("./legoLaranja.png");
+      left: 15%;
+      top: 76%;
+      animation: 11s 30.9s infinite legoPulsing, 1.5s 29.5s backwards legoAppear;
+    }
+    .img1Text1 {
+      animation: 2s 5.7s forwards textAppear;
+    }
+    .img1Text2 {
+      animation: 2s 6.1s forwards textAppear;
+    }
+    .text1 {
+      animation: 1s 5.3s forwards boxAppear, 1.5s 8.7s forwards boxDesappear;
+    }
+    .text2 {
+      animation: 1s 5.7s forwards boxAppear, 1.5s 9.1s forwards boxDesappear;
+    }
+    .img2Text1 {
+      animation: 2s 12s forwards textAppear;
+    }
+    .text3 {
+      animation: 1s 11.4s forwards boxAppear, 1.5s 15s forwards boxDesappear;
+    }
+    .img3Text1 {
+      animation: 2s 18.1s forwards textAppear;
+    }
+    .text4 {
+      animation: 1s 17.5s forwards boxAppear, 1.5s 21.1s forwards boxDesappear;
+    }
+    .img4Text1 {
+      animation: 2s 24.2s forwards textAppear;
+    }
+    .text5 {
+      animation: 1s 23.6s forwards boxAppear, 1.5s 27.7s forwards boxDesappear;
+    }
+    p {
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+      margin: 8px;
+      padding-right: 4px;
+      transform: translateX(-200px);
+    }
+    .textDiv {
+      position: relative;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      max-width: max-content;
+      width: 0;
+      margin: 20px;
+      text-align: center;
+      height: 20px;
+      background-color: #ff0000;
+    }
+    .logo {
+      position: absolute;
+      animation: 1s 1s forwards logo, 1.5s 3s forwards leftRight;
+      background-size: contain;
+      background-image: url("./logo.png");
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .cores {
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .red {
+      background-color: #ff0000;
+      animation: 2s 0.4s forwards cores, 1.5s 3.5s forwards leftRight;
+    }
+    .yellow {
+      animation: 2s 0.2s forwards cores, 1.5s 3.8s forwards leftRight;
+      background-color: #ffff00;
+    }
+    .white {
+      background-color: #ffffff;
+      width: 300px;
+      height: 380px;
+      border-radius: 0%;
+      animation: 1s 3s forwards leftRight;
+    }
+    .div {
+      width: 300px;
+      height: 350px;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+    .img {
+      /* transform: translateX(-300px); */
+      position: absolute;
+      width: 300px;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+    }
+    .img1 {
+      background-image: url("./complexo.jpg");
+      animation: 1s 28.6s forwards imgDesapear, 7.7s 22.9s forwards scaleImg;
+    }
+    .img2 {
+      background-image: url("./simples.jpg");
+      animation: 1s 22.5s forwards imgDesapear, 7.7s 16.8s forwards scaleImg;
+    }
+    .img3 {
+      background-image: url("./pintura.jpg");
+      animation: 1s 16.4s forwards imgDesapear, 7.7s 10.9s forwards scaleImg;
+    }
+    .img4 {
+      background-image: url("./casaArvore.jpg");
+      animation: 1s 10.5s forwards imgDesapear, 7.7s 3.8s forwards scaleImg;
+    }
+  </style>
+  <style>
+    @keyframes finalTextAppear {
+      0% {
+        opacity: 0;
+        left: -10%;
+      }
+      100% {
+        left: 50%;
+        opacity: 1;
+      }
+    }
+    @keyframes circleAppear {
+      0% {
+        width: 0px;
+        height: 0px;
+      }
+      100% {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    @keyframes scaleCircle {
+      0% {
+        scale: 1;
+      }
+      50% {
+        scale: 1.1;
+      }
+      100% {
+        scale: 1;
+      }
+    }
+    @keyframes legoAppear {
+      0% {
+        transform: translateY(-400px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    @keyframes legoPulsing {
+      0% {
+        scale: 1;
+        transform: translateY(0px);
+      }
+      50% {
+        scale: 1.2;
+        transform: translateY(-10px);
+      }
+      100% {
+        scale: 1;
+        transform: translateY(0px);
+      }
+    }
+    @keyframes scaleImg {
+      0% {
+        /* animation-timing-function: cubic-bezier(0, 0.9, 0.97, 1.18); */
+      }
+      50% {
+        width: 310px;
+        height: 365px;
+      }
+      100% {
+        width: 300px;
+        height: 350px;
+      }
+    }
+    @keyframes imgDesapear {
+      0% {
+        animation-timing-function: cubic-bezier(1, 0, 1, 1);
+      }
+      100% {
+        transform: translateX(300px);
+      }
+    }
+    @keyframes boxDesappear {
+      0% {
+        animation-timing-function: cubic-bezier(1, 0, 1, 1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+    }
+    @keyframes textAppear {
+      0% {
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+      }
+      100% {
+        width: 100%;
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+    @keyframes textAppear {
+      0% {
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+      }
+      100% {
+        width: 100%;
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+    @keyframes boxAppear {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    @keyframes cores {
+      0% {
+        width: 0;
+        height: 0;
+      }
+      50% {
+        width: 300px;
+        height: 350px;
+      }
+      100% {
+        width: 300px;
+        height: 350px;
+        border-radius: 0%;
+      }
+    }
+    @keyframes logo {
+      0% {
+        width: 0;
+        height: 0;
+      }
+      65% {
+        width: 130px;
+        height: 130px;
+      }
+      100% {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    @keyframes leftRight {
+      0% {
+        transform: translate(-50%, -50%);
+        animation-timing-function: cubic-bezier(1, 0, 1, 1);
+      }
+
+      100% {
+        transform: translate(120%, -50%);
+      }
+    }
+  </style>
+</html>
